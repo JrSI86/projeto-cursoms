@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: eurekaserver
+    # Define o nome da aplicação Spring.
+    # É o nome que esta instância do Eureka Server terá dentro do sistema de descoberta de serviços.
+
+  security:
+    basic:
+      enabled: true
+      # Habilita a segurança básica para o acesso ao Eureka Server.
+      # Isso significa que será necessário fornecer credenciais para acessar o painel do Eureka.
+    user:
+      name: cursoms-eureka-user
+      # Define o nome de usuário para a autenticação básica.
+      # Usuários precisarão deste nome para se autenticarem.
+      password: ecok-usr-eeuramssur
+      # Define a senha para o usuário especificado.
+      # É importante manter essa senha segura.
+
+server:
+  port: 8761
+  # Define a porta em que o servidor Eureka estará escutando.
+  # 8761 é a porta padrão para servidores Eureka.
+
+eureka:
+  client:
+    register-with-eureka: false
+    # Informa ao Eureka Server para não se registrar em si mesmo como um cliente.
+    # Essa configuração é específica para o servidor Eureka, já que ele atua como um ponto central de registro de serviços.
+    fetch-registry: false
+    # Indica ao servidor para não buscar informações do registro de serviços.
+    # Novamente, isso é específico para o servidor, pois ele não precisa descobrir outros serviços como um cliente faria.
